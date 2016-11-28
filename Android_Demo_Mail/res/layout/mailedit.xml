@@ -1,0 +1,86 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="10dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="10dp"
+    tools:context=".EditMailActivity" >
+
+    <EditText
+        android:id="@+id/et_addr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:inputType="textEmailAddress"
+        android:hint="@string/hint_mailaddr" />
+
+    <EditText
+        android:id="@+id/et_mailsubject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/et_addr"
+        android:inputType="textEmailSubject"
+        android:layout_toLeftOf="@+id/btn_addattachment"
+        android:hint="@string/hint_subject"
+        android:singleLine="true" />
+
+    <Button
+        android:id="@+id/btn_addattachment"
+        android:layout_alignTop="@+id/et_mailsubject"
+        android:layout_alignBottom="@+id/et_mailsubject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/et_addr"
+        android:text="@string/btn_addattachment" />
+
+    <ListView
+        android:id="@+id/lv_mailattachment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_mailsubject"
+        android:layout_margin="5dp"
+        android:background="@color/yellow"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/et_mailcontent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btn_holder"
+        android:layout_alignLeft="@+id/et_mailsubject"
+        android:layout_below="@+id/lv_mailattachment"
+        android:ems="10"
+        android:gravity="top"
+        android:hint="@string/hint_content"
+        android:inputType="textMultiLine" />
+
+    <LinearLayout
+        android:id="@+id/btn_holder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_cancel"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/btn_cancel" />
+
+        <Button
+            android:id="@+id/btn_sent"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/btn_sent" />
+    </LinearLayout>
+
+</RelativeLayout>
